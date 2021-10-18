@@ -1,0 +1,247 @@
+
+
+       * {
+        box-sizing: border-box;
+        }
+        body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: #fbfafa;
+        background-color: #2e2e2e;
+        padding: 0px;
+
+        }
+        h1{
+            -webkit-text-fill-color: rgba(255, 255, 255, 0.685);
+            -webkit-text-stroke: 1px rgb(0, 0, 0);
+            font-size: 100px;
+        }
+        div.container {
+        overflow: auto;
+        }
+        header {
+            text-align:justify;
+            padding: 150px;
+            white-space:nowrap;
+            position: static;
+            display: flex;
+        
+        }
+    
+        nav {
+        display:  block;
+        float: left;
+        width: 10%;
+        text-align: center;
+        position: fixed;
+        left: 0;
+        top: 550px;
+        }
+        nav a:hover{
+            width: 210px;
+            box-shadow: 10px 4px 15px 0  #ffffff;
+            transition-duration: 0.5s;
+        }
+        nav ul {
+        padding-left: 0px;
+        }
+        nav li {
+        list-style: none;
+        }
+        nav li a {
+        background-color: #0707077c;
+        padding: 30px;
+        margin-top: 3px;
+        display: inline-block;
+        width: 100%;
+        color:  #ffffff;
+        font-weight: 700;
+        font-size: 20px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        main {
+        float: left;
+        width: 70%;
+        max-width: 1200px;
+        padding: 0 100px;
+        margin-left: 100px;
+        display:  inline;
+        text-align: LEFT;
+        }
+        .right {
+        background-color: #00000042;
+        float:left;
+        width: 25%;
+        padding: 5px;
+        padding-left: 0px;
+        margin-top: 0px;
+        margin-left: 30px;
+        text-align: center;
+        
+        font-size: 20px;
+        text-align: center;
+        box-shadow: 5px 5px 5px rgb(14, 14, 14);
+        display: block;
+        }
+        .right-cont{
+        background-color: #00000042;
+        float:left;
+        width: auto;
+        padding: 5px;
+        padding-left: 30px;
+        margin-top: 0px;
+        
+        
+        font-size: 20px;
+        text-align: center;
+        box-shadow: 5px 5px 5px rgb(14, 14, 14);
+        display: block;
+
+        }
+        .right-cont li{
+        list-style: none;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 10px;
+        padding-right: 13px;
+        display: inline-block;
+        }
+
+        .right-cont a{
+        color: #fbfafa;
+        padding-right: 3px;
+            
+        }
+        .right-cont a:hover{
+            font-size: 30px;
+            text-shadow: 2px 2px 7px #ffffff;
+            transition-duration: 0.5s;
+        }
+        .right-cont a:visited{
+            color: #fbfafa;
+        }
+        .right li{
+        list-style: none;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 10px;
+        display: inline-block;
+        }
+        .right a{
+        color: #fbfafa;
+        padding-right: 3px;
+            
+        }
+        .right a:hover{
+            font-size: 30px;
+            text-shadow: 2px 2px 7px #ffffff;
+            transition-duration: 0.5s;
+        }
+        .right a:visited{
+            color: #fbfafa;
+        }
+        p{
+            position: center;
+        }
+        .gird-conteiner{
+            display: grid;
+            grid-template-rows: auto;
+            grid-template-columns: auto auto;
+            grid-gap: 5px;
+            
+            
+        }
+        .gird-item{
+            border-top: 1px solid white;
+
+
+        }
+        footer {
+        background: rgb(0,0,0);
+        background: radial-gradient(263deg, rgba(0,0,0,1) 0%, rgba(79,79,82,1) 35%, rgba(222,222,222,1) 100%);
+        text-align: center;
+        padding: 10px;
+        margin-top: 57px;
+        }
+        label{
+            padding-top:  15px  ;
+            padding-bottom: 10px;
+        }
+        form{
+            background: rgba(75, 75, 75, 0.377);
+            padding: 2px;
+            width: 600px;
+            height: 750px;
+            border-radius: 20px;
+            border-left: 1px solid rgba(255, 255, 255, 0.349);
+            border-top: 1px solid rgba(255, 255, 255, 0.349);
+            backdrop-filter: blur(10px);
+            box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);
+            text-align: center;
+            transition: all 0.2s ease-in-out;
+            margin-left: 300px;
+            margin-top: 0;
+        }
+        form input{
+        background: transparent;
+        width: 500px;
+        padding: 1px;
+        margin-bottom: 2em;
+        border: none;
+        border-left: 1px solid rgba(255, 255, 255, 0.377);
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 5000px;
+        backdrop-filter: blur(5px);
+        box-shadow: 4px 4px 60px rgba(0,0,0,0.2);
+        color: #fff;
+        font-family: Montserrat, sans-serif;
+        font-weight: 50px;
+        font-size:  20px;
+        text-align: center;
+        transition: all 0.2s ease-in-out;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        form input:hover{
+            width:530px;
+            height: 60px;
+            transition-duration: 1s;
+        }
+        form input:invalid{
+            background-color: rgba(255, 255, 0, 0.205);
+        }
+        textarea{
+            background: transparent;
+            width: 500px;
+            height: 100px;
+            padding: 1px;
+            margin-bottom: 2em;
+            border: none;
+            border-left: 1px solid rgba(255, 255, 255, 0.377);
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 10%;
+            backdrop-filter: blur(5px);
+            box-shadow: 4px 4px 60px rgba(0,0,0,0.2);
+            color: #fff;
+            font-family: Montserrat, sans-serif;
+            font-weight: 500;
+            transition: all 0.2s ease-in-out;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            resize: none;
+        }
+        .contacto{
+            display: inline-block;
+        }
+        .submit{
+            background-color:rgba(0, 0, 0, 0.733);
+            height: 50px;
+            font-size: 20px;
+        }
+        
+        
+       /* For mobile phones: */
+        @media only screen and (max-width: 620px) {
+        nav,
+        main,
+        .right {
+        width: 100%;
+    }
+}
