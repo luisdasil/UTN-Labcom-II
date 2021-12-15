@@ -10,6 +10,8 @@ var weatherApp = document.getElementById("API")
 var card = document.getElementById("card")
 var weather = document.getElementById("weather")
 var card = document.getElementById("card")
+var buttonAddCity = document.getElementById("button-add-city")
+
 function getWeather() {
     api={
         url:"https://api.openweathermap.org/data/2.5/weather?q=" ,
@@ -111,6 +113,7 @@ function addCity(){
     if(newCity.value!=city.options || newCity.value != data.name ){
         localStorage.getItem(newCity.value);
         city.options.add(newCity.value);
+        buttonAddCity.className += "animated__animated animate__fadeOutRightBig animate__delay-2s "
     }
     else{
         card.className = "card-error";
