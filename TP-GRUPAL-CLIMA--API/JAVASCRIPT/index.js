@@ -109,8 +109,8 @@ function addCity(){
     newCity
     city
     if(newCity.value!=city.options || newCity.value != data.name ){
-        localStorage.getItem(newCity);
-        city.options.add(newCity)
+        localStorage.getItem(newCity.value);
+        city.options.add(newCity.value);
     }
     else{
         card.className = "card-error";
