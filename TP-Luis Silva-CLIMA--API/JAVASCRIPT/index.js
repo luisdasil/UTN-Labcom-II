@@ -6,7 +6,6 @@ var main = document.getElementById("name")
 var temp = document.getElementById("temp")
 var desc = document.getElementById("desc")
 var clouds= document.getElementById("clouds")
-var weatherApp = document.getElementById("API")
 var card = document.getElementById("card")
 var weather = document.getElementById("weather")
 var card = document.getElementById("card")
@@ -28,7 +27,7 @@ function getWeather() {
         let weatherDescription = data['weather'][0]['description'];
 
 
-        weatherApp.style.display = "block";
+        card.style.display = "block";
         main.innerHTML = seleccion.value
         temp.innerHTML =  temperature;
         desc.innerHTML = thermalSensation;
