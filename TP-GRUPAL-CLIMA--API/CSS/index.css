@@ -25,12 +25,10 @@ body {
     margin: 1em;
     display: none;
   }
-  
-  .container-error {
-    display: block;
-    background-color: rgba(255, 0, 0, 0.883);
-    color: aliceblue;
-  }
+.card-error {
+  display: none;
+  background-color: red;
+}
 
   button {
     margin: 0.5em;

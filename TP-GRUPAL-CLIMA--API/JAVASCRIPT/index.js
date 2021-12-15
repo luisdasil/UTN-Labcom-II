@@ -9,7 +9,7 @@ var clouds= document.getElementById("clouds")
 var weatherApp = document.getElementById("API")
 var card = document.getElementById("card")
 var weather = document.getElementById("weather")
-
+var card = document.getElementById("card")
 function getWeather() {
     api={
         url:"https://api.openweathermap.org/data/2.5/weather?q=" ,
@@ -18,6 +18,7 @@ function getWeather() {
     .fetch("https://api.openweathermap.org/data/2.5/weather?q="+city.value+"&appid=3936d0749fdc3124c6566ed26cf11978&units=metric&lang=es")
         .then((response) => response.json())
         .then(data => {
+            city.value = data['name'];
         let temperature = data['main']['temp'];
         let thermalSensation = data['main']['feels_like'];
         let mainHumidity = data['main']['humidity'];
@@ -101,9 +102,18 @@ async function apiConection() {
 //         $('#mi-select').val(localStorage.getItem('ejemplo'));
 //     }
 // };
-
+console.log(apiConection())
+console.log(getWeather())
 
 function addCity(){
-    
+    newCity
+    city
+    if(newCity.value!=city.options || newCity.value != data.name ){
+        localStorage.getItem(newCity);
+        city.options.add(newCity)
+    }
+    else{
+        card.className = "card-error";
+    }
 
 }

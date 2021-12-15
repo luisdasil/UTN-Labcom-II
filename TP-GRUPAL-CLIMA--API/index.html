@@ -14,7 +14,7 @@
         <form id="selec-city">
             <div class="container-fluid">
                 <label class="control-label "  >Seleccione la ciudad que desee</label>
-                <select class="form-select" multiple aria-label="multiple select example" id="cities"   >
+                <select class="form-select" multiple aria-label="multiple select example" id="cities"   onchange="addCity()">
                     <option value="Rosario">Rosario</option>
                     <option value="Brazilia" >Brazilia</option>
                     <option value="NuevaYork">Nueva York</option>
@@ -24,10 +24,10 @@
             </div>
             <div id="new-city" class="" >
                 <input type="text" id="addCity" placeholder= "Ingrese una ciudad">
-                <button onclick="cityChanged()">+ Agregar ciudad</button>
+                <button onclick="addCity()">+ Agregar ciudad</button>
             </div>
         </form>
-        <div class="container" id="API">
+        
             <div class="card" id="card">
                 <h1 class="name" id="name"></h1>
                 <p class="temp" id="temp"></p>
@@ -35,7 +35,11 @@
                 <p class="description"    id="desc" ></p>
                 <p id="weather"></p>
             </div>
-        </div>
+
+            <div class='card-error'>
+                error verifique que la ciudad a ongresar sea real o no se encuentre en la lista
+
+            </div>
     </main>
 
     
