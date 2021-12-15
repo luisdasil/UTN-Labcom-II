@@ -1,0 +1,69 @@
+* {
+    font-family: cursive;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    background-image: url(https://www.cursosadistancia.com.ar/img/article/cursos-electricidad-argentina);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+h1{
+    font-family: sans-serif;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.685);
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
+}
+
+
+.form-container{
+    background-color: rgba(200, 200, 200, 0.2);
+    border-radius:25px;
+    padding: 50px;
+    text-align: center;
+}
+
+
+.form-container .item-form{
+    padding: 10px;
+}
+
+
+input{
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+::placeholder {
+    color: rgba(113, 113, 116, 0.438);
+    text-align: center;
+}
+
+
+.buttom-item button:hover{
+    box-shadow: 0 0 10px black;
+    font-size: 15px;
+    transition-duration: 1.0s;
+    width:90px;
+}
+
+
+button{
+    border-radius: 5px;
+    padding: 5px;
+    background-color:#0481f596;
+    width: 80px;
+}
+button a{
+    text-decoration: none;
+} 
+button a:active{
+color:black;
+}

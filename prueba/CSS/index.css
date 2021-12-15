@@ -1,0 +1,157 @@
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #0f0c29;  /* fallback for old browsers */
+    background: linear-gradient(to right, rgba(36, 36, 62, 0.623), rgba(48, 43, 99, 0.603), #0f0c29), url(/img/backgraund-index.jpg); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+    background-repeat: no-repeat;
+    display:inline-block;
+    height: auto;
+    max-width: 75%;
+    max-height: 100%;
+    display: flex; 
+    align-content: flex-end;
+}
+
+
+/*text-ubicacion-tel-mail-*/
+.text{
+    height: auto;
+    width: 300px;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 108px;
+    margin-left: 30px;
+    background-color: #000000ad;
+
+}
+
+/*Calculadora*/
+
+.form-calculadora{
+    display: block;
+    margin-top: 108px;
+    margin-left: 500px;
+    width: 600px;
+    height: 800px;  
+    border-radius: 8px/7px; 
+    background-color: #ffffff63; 
+    box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
+    border: solid 1px #cbc9c9;
+    color: aliceblue;
+}
+
+.form-calculadora h2{
+    text-align: center;
+}
+
+.tipo-de-usuario{
+    margin-left: 90px;
+}
+
+input[type=radio] {
+    visibility: hidden;
+}
+
+
+form{ 
+    margin: 10px;
+    animation: both;
+    animation-duration: 2s;
+}
+
+label.radio {
+    cursor: pointer;
+    text-indent: 40px;
+    font-size: 20px;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+label.radio:before {
+    background: #055cad;
+    content:'';
+    position: absolute;
+    top:2px;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+}
+
+label.radio:after {
+    opacity: 0;
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 4px;
+    background: transparent;
+    top: 7.5px;
+    left: 4.5px;
+    border: 3px solid #ffffff;
+    border-top: none;
+    border-right: none;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+input[type=radio]:checked + label:after {
+    opacity: 1;
+}
+
+hr{
+    color: #a9a9a9;
+    opacity: 0.3;
+}
+
+.zona-domicilio{
+    margin-top: 90px;
+    margin-bottom:90px;
+    text-align: left;
+    font-size: larger;
+}
+select.domicilio{
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+
+.cantidad-kWh input{
+    text-align: center !important;
+    width: 300px;
+    border-bottom: 1px solid rgba(7, 7, 7, 0.596) !important;
+}
+
+.button-submit{
+    border-radius: 5px;
+    width: 100px;
+    height: 30px;
+    margin-top: 108px;
+    margin-left: 100px;
+    text-align: center !important;
+}
+
+/*Footer*/
+/*
+footer {
+    margin-top:100%;
+    width: auto;
+    height: auto;
+    background-color: #0757a1ce;
+    color: #252424;
+    font-size: 20px;
+    text-align: center;
+    padding: 5px;
+}
+*/
+
+

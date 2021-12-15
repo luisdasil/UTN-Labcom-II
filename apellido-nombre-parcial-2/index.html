@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotizador - [Luis - Silva]</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel= "script" src="js/index.js" defer >
+</head>
+
+<body>
+    <div class="product-image">
+        <img src="/img/iphone_13.png" alt="iphone" />
+    </div>
+    <div class="product-details">
+        <div class="product-details-content">
+            <h2>iPhone 13 Pro</h2>
+            <form action="" >
+                <div class="form-control">
+                    <label>Color</label>
+                    <select onchange="changeProductImage()" id="product-color" >
+                        <option disabled selected value="0"> -- Seleccione una opción -- </option>
+                        <option value="graphite"  id="graphite"  >Grafito</option>
+                        <option value="silver" id="silver"> Silver</option>
+                        <option value="sierra" id="sierra" >Sierra</option>
+                        <option value="gold" id="gold">Gold</option>
+                    </select>
+                </div>
+                <div class="form-control">
+                    <label>Capacidad</label>
+                    <select id="product-capacidad" for= "product-capacidad">
+                        <option disabled selected value="0"> -- Seleccione una opción -- </option>
+                        <option value="128" id="128">128 GB</option>
+                        <option value="256" id="256">256 GB</option>
+                        <option value="512" id="512">512 GB</option>
+                    </select>
+                </div>
+                <div class="form-control"  id="cantidad" >
+                    <label>Cantidad</label>
+                    <input type="number" />
+                </div>
+                <div class="form-control">
+                    <button type="button" onclick="calculatePrice()">Cotizar</button>
+                </div>
+                <div id="result" class="-formcontrol">
+                    Resultado cotización o error
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

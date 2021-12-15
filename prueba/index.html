@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Tarifa</title>
+    <link rel="stylesheet" href="./CSS/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="media/css/">
+    <script src="JS/index.js"></script>
+</head>
+<body>
+    <!---->
+    <div    class="text">
+        <img src="/img/logo-epe-blanco-nuevo.png" alt="E.P.E">
+        <h1>Calculadora</h1>
+        <br>
+        <p class="animate__animated animate__zoomIn animate__slow">lorem ipsum dolor sit amet</p>
+        <iframe class = "animate__animated  animate__zoomIn animate__slow "src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53541.35512935778!2d-60.666386984293574!3d-32.99495040648205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b7ab170d0a8309%3A0x283014309ad9bec1!2sEPE%20Energ%C3%ADa%20de%20Santa%20Fe!5e0!3m2!1ses!2sar!4v1636759840875!5m2!1ses!2sar" width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+    </div>
+        <section>
+            <div class="animate__animated animate__backInRight  animate__delay-3s ">
+            <div class="form-calculadora">
+                <h2 > Calcular Consumo </h2>
+                <form class="calculadora" name="calculadora" onsubmit="return validateForm()">
+                    <hr>
+                    <div class = "tipo-de-usuario">
+                        <input type="radio" id="radio-1" name="account"/>
+                        <label for="radio-1" class="radio">Residencial</label>
+                        <input type="radio" value="None" id="radio-2" name="account"/>
+                        <label for="radio-2" class="radio">Industrial</label>
+                    </div>
+                    <hr>
+                    <div class = "zona-domicilio">
+                    <label for="domicilio">Domicilio</label>
+                    <br>
+                    <select class="domicilio" id="domicilio" required = "">
+                        <option value="default" id="default" selected disabled hidden>Seleccione distrito</option>
+                        <option value="Distrito-Centro" id="Distrito-Centro">Distrito Centro</option>
+                        <option value="Distrito-Zur" id="Distrito-Zur">Distrito Sur</option>
+                        <option value="Distrito-Oeste" id="Distrito-Oeste">Distrito Oeste</option>
+                        <option value="Distrito-Norte" id="Distrito-Norte">Distrito Norte</option>
+                    </select>
+                    </div>
+                    <hr>
+                    <div class="cantidad-kWh">
+                        <label for="cantidadkwh">Cantidad de kWh del mes</label>
+                        <input type = "number" id="kWh">
+                        <br>
+                        
+                        <input type = "text" id="result" placeholder="costo de tarifa">
+                        <br>
+
+
+                        <input type="submit" value="Calcular" class="button-submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+        </section>
+    
+    <footer>
+
+</body>
+</html>
+
+</body>
+</html>

@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+
+
+html *{
+  font-family: 'Poppins', sans-serif;
+  /*para ser mas facil moverse por  el  navegador*/
+  overflow: hidden; 
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 50%;
+  padding: 60px 0px;
+}
+
+/* MENU: NAVBAR/HEADER */
+
+nav {
+  background-color: #222222;
+  /*para acceder al nav desde cualquier seccion*/
+  position: fixed;
+  width: 100%;
+}
+
+nav ul {
+  margin: 0;
+  padding: 20px;
+  list-style-type: none;
+  text-align: center;
+  display: flex;
+}
+
+nav ul li {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: 25%;
+  display: inline-flex;
+  margin-right: 10px;
+  text-align: center;
+}
+
+nav ul li a {
+  color: #eeeeee;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 100;
+  width: 100%;
+  display: block;
+}
+nav ul li a:hover{
+  background-color: rgba(213, 151, 65, 0.3);
+
+}
+/* SECTION MAIN IMAGE */
+
+#section-main-image {
+  height: 1000px;
+  background-image: url("https://images.unsplash.com/photo-1463797221720-6b07e6426c24?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2071&q=80");
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  
+}
+
+#section-main-image h1 {
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+  text-align: center;
+  padding-top: 350px; /*no me funcionaba los elementos del flexbox lo tuve que centrar asi*/
+  font-size: 80px;
+}
+#section-main-image h6 {  /*h6 para asegurarme no haber cambiado otra cosa*/
+  text-align: center; 
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px 5px #000;
+  font-size: 20px; 
+}
+
+/* SECTION COFFEE */
+
+#section-coffee {
+  background-color: #eeeeee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 40px;
+}
+#section-coffee h2{
+  margin: top 40px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 20px;
+}
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.product {
+  padding: 0 15px;
+}
+
+.product img {
+  width: 300px;
+}
+
+/* FOOTER CONTACT */
+
+#footer-contact {
+  background-color: #58462c;
+  color: #eeeeee;
+  display: flex;
+  align-items: center; /*centrado*/
+  justify-content: center;
+}
+
+#footer-contact .contact-data {
+  display: flex;
+  align-items: center; /*centrado*/
+  justify-content: center;
+
+
+}
+
+.contact-form form {
+  margin-left: 150px;
+  text-align: right;
+}
+
+.contact-form form .form-control {
+  padding: 10px 0;
+}
+
+.contact-form form .form-control label {
+  margin-right: 15px;
+}
+
+.contact-form form button {
+  margin-top: 15px;
+  color: #58462c;
+  padding: 2px 30px;
+}

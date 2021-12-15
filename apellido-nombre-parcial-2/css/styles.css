@@ -1,0 +1,92 @@
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;700&display=swap);
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    max-height: 100vh;
+    display: flex;
+}
+
+.product-image {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-image img {
+    height: 100%;
+}
+
+.product-details {
+    background-color: #efefef;
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-details-content {
+    min-width: 400px;
+}
+
+
+/* form control */
+
+.form-control {
+    margin: 30px 0;
+}
+
+.form-control label {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.form-control input {
+    width: 100%;
+    font-size: 20px;
+    padding: 10px 10px;
+}
+
+.form-control select {
+    width: 100%;
+    font-size: 20px;
+    padding: 10px 10px;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    font-size: 20px;
+    text-transform: uppercase;
+    background-color: #212121;
+    color: #ffe4c4;
+    border: 0;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #414141;
+    color: #ffe4c4;
+}
+
+button:active {
+    background-color: #686868;
+    color: #ffe4c4;
+}
+
+#result {
+    padding: 20px;
+    border-radius: 35px;
+    color: hotpink;
+    text-align: center;
+    font-size: 20px;
+}
+
