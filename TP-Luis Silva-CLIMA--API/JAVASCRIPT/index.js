@@ -48,7 +48,7 @@ async function apiConection() {
     let weatherDescription = data['weather'][0]['description'];
 
 
-    weatherApp.style.display = "block";
+    card.style.display = "block";
     main.innerHTML = seleccion.value
     temp.innerHTML =  temperature;
     desc.innerHTML = thermalSensation;
@@ -70,10 +70,10 @@ async function apiConection() {
 //     .then(response => response.json())
 //     .then(response => console.log(response))
 //     .then(data => {
-//         tempValue = data['main']['temp'];
-//         city.value = data['name'];
-//         descValue = data['weather'][0]['description'];
-//         geoLocation = data['coord'] ['sys']
+//          let temperature = data['main']['temp'];
+            // let thermalSensation = data['main']['feels_like'];
+            // let mainHumidity = data['main']['humidity'];
+            // let weatherDescription = data['weather'][0]['description'];
 // })
 //     if (data.value == 0){
 //         API.className += "container-error"
