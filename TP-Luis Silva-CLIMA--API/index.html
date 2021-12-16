@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="CSS/index.css">
     <link
     rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <script  src= "JAVASCRIPT/index.js" defer ></script>
 </head>
 <body>
@@ -17,7 +17,7 @@
         <form id="selec-city">
             <div class="container-fluid">
                 <label class="control-label "  >Seleccione la ciudad que desee</label>
-                <select class="form-select" multiple aria-label="multiple select example" id="cities"   onchange="addCity()">
+                <select class="form-select" multiple aria-label="multiple select example" id="cities"  >
                     <option value="Rosario">Rosario</option>
                     <option value="Brazilia" >Brazilia</option>
                     <option value="NuevaYork">Nueva York</option>
@@ -27,12 +27,12 @@
             </div>
             <div id="new-city" class="container-fluid" >
                 <input type="text" id="addCity" placeholder= "Ingrese una ciudad">
-                <button id="button-add-city"onclick="addCity()" class="">+ Agregar ciudad</button>
+                <button id="button-add-city"  class="animated__animated  animate__backInDown " onclick="addNewCity()">+ Agregar ciudad</button>
             </div>
         </form>
         
             <div class="card" id="card">
-                <h1 class="name" id="name"></h1>
+                <h1 class="main" id="main"></h1>
                 <p class="temp" id="temp"></p>
                 <p class="clouds"  id="clouds"></p> </p>
                 <p class="description"    id="desc" ></p>

@@ -1,7 +1,7 @@
 
 
 let city = document.getElementById("cities");
-let newCity = document.getElementById("newCity");
+let newCity = document.getElementById("addCity");
 var main = document.getElementById("name")
 var temp = document.getElementById("temp")
 var desc = document.getElementById("desc")
@@ -12,13 +12,14 @@ var card = document.getElementById("card")
 var buttonAddCity = document.getElementById("button-add-city")
 var cardError= document.getElementById("card-error")
 
+city = ["Rosario", "Brazilia", "NuevaYork", "Tokio"]
+
 function getWeather() {
     api={
-        url:"https://api.openweathermap.org/data/2.5/weather?q=" ,
-        key:"&appid=3936d0749fdc3124c6566ed26cf11978&units=metric&lang=es"
+        url:"api.openweathermap.org/data/2.5/weather?q=" + city.value + "&appid=453fda7f094eec07c9612eedaac172e6&units=metric&lang=es"
     }
-    .fetch("https://api.openweathermap.org/data/2.5/weather?q="+city.value+"&appid=3936d0749fdc3124c6566ed26cf11978&units=metric&lang=es")
-        .then((response) => response.json())
+    fetch(`${api.url}`)
+        .then((cityStorage) => cityStorage.json())
         .then(data => {
         city.value = data['name'];
         let temperature = data['main']['temp'];
@@ -27,8 +28,8 @@ function getWeather() {
         let weatherDescription = data['weather'][0]['description'];
 
 
-        card.style.display = "block";
-        main.innerHTML = seleccion.value
+        
+        main.innerHTML = city.value
         temp.innerHTML =  temperature;
         desc.innerHTML = thermalSensation;
         clouds.innerHTML =  mainHumidity;
@@ -38,9 +39,11 @@ function getWeather() {
 }
 
 
+
+
 async function apiConection() {
     try {
-    await  getWeather();
+    var weather = await  getWeather();
 
     let temperature = data['main']['temp'];
     let thermalSensation = data['main']['feels_like'];
@@ -48,24 +51,19 @@ async function apiConection() {
     let weatherDescription = data['weather'][0]['description'];
 
 
-    card.style.display = "block";
     main.innerHTML = seleccion.value
     temp.innerHTML =  temperature;
     desc.innerHTML = thermalSensation;
     clouds.innerHTML =  mainHumidity;
     weather.innerHTML = weatherDescription;
-} catch (err) {
-    cardError.style.display = "block"
+} catch (error) {
+    console.log("error")
 }
 }
 
 
 
     // function getWeather(){
-//     api={
-//         url: 'https://api.openweathermap.org/data/2.5/weather?q=',
-//         key:'3936d0749fdc3124c6566ed26cf11978'
-//     }
 //     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=${api.key}`)
 //     .then(response => response.json())
 //     .then(response => console.log(response))
@@ -106,12 +104,15 @@ async function apiConection() {
 // };
 console.log(apiConection())
 console.log(getWeather())
+console.log(main)
 
-function addCity(){
+
+function addNewCity(){
 
     if(newCity.value != city.option || newCity.value != getWeather(data.name) ){
-        localStorage.getItem(city.option)
-        localStorage.setItem(city.option.add(newCity.value));
+        localStorage.getItem(city.options)
+
+        localStorage.setItem(city.options.add(new Option(document.getElementById("addCity").value)))
 
         buttonAddCity.className += "animated__animated animate__fadeOutRightBig animate__delay-2s "
     }
