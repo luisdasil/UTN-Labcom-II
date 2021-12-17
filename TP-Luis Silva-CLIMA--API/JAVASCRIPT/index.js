@@ -55,11 +55,11 @@ async function apiConection(city) {
 
         card.style.display= 'block'
         card.className += "animated__animated animate__fadeInDown animate__delay-2 animate__slow"
-        main.innerHTML = city.value;
-        temp.innerHTML =  temperature;
-        desc.innerHTML = thermalSensation;
-        clouds.innerHTML =  mainHumidity;
-        weather.innerHTML = weatherDescription;
+        main.innerHTML = city.value;//nombre de la ciudad
+        temp.innerHTML =  temperature;//temperatura
+        desc.innerHTML = thermalSensation; //sensacion termica
+        clouds.innerHTML =  mainHumidity;//humedad
+        weather.innerHTML = weatherDescription; //descripcion
 
 } catch (error) {
     console.log("error")
@@ -96,13 +96,13 @@ function onSubmit(event) {
 city = ["Rosario", "Brazilia", "NuevaYork", "Tokio"]
 
 function addNewCity(){
-
+    if ((newCity.value != city.options) && (newCity.value = apiConection(data.name))){
 
         localStorage.getItem(city.options)
 
         localStorage.setItem(city.option.add(newCity.value))
 
         buttonAddCity.className += "animated__animated animate__fadeOutRightBig animate__delay-2s "
-    
+    }
 
 }
