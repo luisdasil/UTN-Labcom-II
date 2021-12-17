@@ -93,7 +93,7 @@ function onSubmit(event) {
 
 
 
-city = ["Rosario", "Brazilia", "NuevaYork", "Tokio"]
+city = ["Rosario", "Brazilia", "Tokio"]
 
 function addNewCity(){
     if ((newCity.value != city.options) && (newCity.value = apiConection(data.name))){
