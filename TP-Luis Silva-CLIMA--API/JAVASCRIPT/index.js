@@ -1,6 +1,7 @@
 
 
 let city = document.getElementById("cities"); //select
+
 let newCity = document.getElementById("addCity");//input text
 
 // variables para mostrar api
@@ -44,7 +45,7 @@ var cardError= document.getElementById("card-error")//error
 
 async function apiConection(city) {
     try {
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q="${city.value}&appid=453fda7f094eec07c9612eedaac172e6&units=metric&lang=es`)
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=453fda7f094eec07c9612eedaac172e6&units=metric&lang=es`)
         const data = await response.json();
         console.log(data)
         let temperature = data['main']['temp'];
