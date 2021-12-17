@@ -1,16 +1,20 @@
 
 
-let city = document.getElementById("cities");
-let newCity = document.getElementById("addCity");
+let city = document.getElementById("cities"); //select
+let newCity = document.getElementById("addCity");//input text
+
+// variables para mostrar api
+
 var main = document.getElementById("name")
 var temp = document.getElementById("temp")
 var desc = document.getElementById("desc")
 var clouds= document.getElementById("clouds")
 var card = document.getElementById("card")
 var weather = document.getElementById("weather")
-var card = document.getElementById("card")
-var buttonAddCity = document.getElementById("button-add-city")
-var cardError= document.getElementById("card-error")
+
+var buttonAddCity = document.getElementById("button-add-city")//boton input text
+
+var cardError= document.getElementById("card-error")//error
 
 
 
@@ -40,7 +44,7 @@ var cardError= document.getElementById("card-error")
 
 async function apiConection(city) {
     try {
-        const response = await fetch(`api.openweathermap.org/data/2.5/weather?q="${city.value}&appid=453fda7f094eec07c9612eedaac172e6&units=metric&lang=es`)
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q="${city.value}&appid=453fda7f094eec07c9612eedaac172e6&units=metric&lang=es`)
         const data = await response.json();
         console.log(data)
         let temperature = data['main']['temp'];
@@ -49,6 +53,7 @@ async function apiConection(city) {
         let weatherDescription = data['weather'][0]['description']
 
         card.style.display= 'block'
+        card.className += "animated__animated animate__fadeInDown animate__delay-2 animate__slow"
         main.innerHTML = city.value;
         temp.innerHTML =  temperature;
         desc.innerHTML = thermalSensation;
@@ -73,9 +78,9 @@ function onSubmit(event) {
 //     .then(response => console.log(response))
 //     .then(data => {
 //          let temperature = data['main']['temp'];
-            // let thermalSensation = data['main']['feels_like'];
-            // let mainHumidity = data['main']['humidity'];
-            // let weatherDescription = data['weather'][0]['description'];
+//          let thermalSensation = data['main']['feels_like'];
+//          let mainHumidity = data['main']['humidity'];
+//          let weatherDescription = data['weather'][0]['description'];
 // })
 //     if (data.value == 0){
 //         API.className += "container-error"
