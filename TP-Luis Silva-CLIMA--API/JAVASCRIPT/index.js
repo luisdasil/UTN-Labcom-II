@@ -1,3 +1,15 @@
+/*  Arreglar:
+    1) card-error:
+        Tiene que desaparecer despues de arreglar los datos tambien modificar los estilos
+
+    2) addNewCity():
+        Programar la funcion para poder agregar opciones al select
+
+    3) animated.css:
+        Lograr que las animaciones puedan aparecer
+*/
+
+
 
 let city = document.getElementById("cities"); //select
 var weatherForm = document.getElementById("selec-city")//form
@@ -32,14 +44,13 @@ async function apiConection() {
 
         card.style.display= "block"
         card.className += "animated__animated animate__fadeInDown animate__delay-5 animate__slow"
-        main.innerHTML = city.value
+        main.innerHTML = data.name
         temp.innerHTML =  "Temperatura actual: " + temperature + "°C";//temperatura
         desc.innerHTML =  "Sensacion Termica: " + thermalSensation + "°C"; //sensacion termica
         clouds.innerHTML =  "Humedad: " + mainHumidity + " %";//humedad
         weather.innerHTML = weatherDescription; //descripcion
 } catch (error){
     cardError.style.display="block"
-    alert(error.message)
 }
 }
 
@@ -52,7 +63,7 @@ weatherForm.addEventListener('submit', onSubmit, true);
 
 
 function addNewCity(){
-    if ((newCity.value != city.options) && (newCity.value = getWeather(data.name))){
+    if ((newCity.value != city.options) && (newCity.value == getWeather(data.name))){
         localStorage.getItem(city.options)
         localStorage.setItem(city.option.add(newCity.value))
         buttonAddCity.className += "animated__animated animate__fadeOutRightBig animate__delay-2s "
