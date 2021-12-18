@@ -14,33 +14,35 @@
 </head>
 <body>
     <main>
-        <form id="selec-city">
-            <div class="container-fluid">
+        <form id="selec-city"   >
+            <div class="container-fluid" id="city-list">
                 <label class="control-label "  >Seleccione la ciudad que desee</label>
-                <select class="form-select" multiple aria-label="multiple select example" id="cities"  >
+                <select class="form-select"  id="cities"  >
+                    <option value="0" disabled selected></option>
                     <option value="Rosario">Rosario</option>
                     <option value="Brazilia" >Brazilia</option>
-                    <option value="NuevaYork">Nueva York</option>
-                    <option value="Tokio">Tokio</option>
+                    <option value="Tokyo">Tokyo</option>
+                    <option value="Moscu">Moscu</option>
+                    <option value="Madrid">Madrid</option>
                 </select>
-                <button id="button"  >Obtener clima </button>
-            </div>
-            <div id="new-city" class="container-fluid" >
-                <input type="text" id="addCity" placeholder= "Ingrese una ciudad">
-                <button id="button-add-city"  class="animated__animated  animate__backInDown " onclick="addNewCity()">+ Agregar ciudad</button>
+                <button id="button" >Obtener clima </button>
             </div>
         </form>
-        
-            <div class="card" id="card">
-                <h1 class="main" id="main"></h1>
-                <p class="temp" id="temp"></p>
-                <p class="clouds"  id="clouds"></p> </p>
-                <p class="description"    id="desc" ></p>
-                <p id="weather"></p>
-            </div>
+        <div class="card" id="card">
+            <h1 class="main" id="name"></h1>
+            <p class="temp" id="temp"></p>
+            <p class="clouds"  id="clouds"></p> </p>
+            <p class="description" id="desc" ></p>
+            <p id="weather"></p>
+        </div>
+        <div id="new-city" class="container-fluid" >
+            <input type="text" id="addCity" placeholder= "Ingrese una ciudad">
+            <button id="button-add-city"  class="animated__animated  animate__backInDown " onclick="addNewCity()">+ Agregar ciudad</button>
+        </div>
+            
 
-            <div class='card-error'>
-                error verifique que la ciudad a ongresar sea real o no se encuentre en la lista
+            <div class="card-error" id="card-error">
+                error verifique que la ciudad a ingresar sea real o no se encuentre en la lista
 
             </div>
     </main>
