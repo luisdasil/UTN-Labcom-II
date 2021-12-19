@@ -12,32 +12,41 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <script  src= "JAVASCRIPT/index.js" defer ></script>
 </head>
-<body>
+<body id="body">
     <main>
         <form id="selec-city"   >
             <div class="container-fluid" id="city-list">
                 <label class="control-label "  >Seleccione la ciudad que desee</label>
-                <select class="form-select"  id="cities"  >
+                <select class="form-select"  id="cities" onchange="styleCard()" >
                     <option value="0" disabled selected></option>
                     <option value="Rosario">Rosario</option>
-                    <option value="Brazilia" >Brazilia</option>
+                    <option value="Brasilia" >Brasilia</option>
                     <option value="Tokyo">Tokyo</option>
-                    <option value="Moscu">Moscu</option>
+                    <option value="Roma">Roma</option>
                     <option value="Madrid">Madrid</option>
                 </select>
                 <button id="button" >Obtener clima </button>
             </div>
         </form>
-        <div class="card" id="card">
+        <div class="card animated__animated animate__fadeInDown  animate__slow"  id="card">
             <h1 class="main" id="name"></h1>
             <p class="temp" id="temp"></p>
             <p class="clouds"  id="clouds"></p> </p>
             <p class="description" id="desc" ></p>
             <p id="weather"></p>
+            <div class="flex">
+                <img src="https://openweathermap.org/img/wn/04n.png"  class="icon"  id="iconImg"/>
+                <div class="description" id="weather"></div>
+            </div>
         </div>
+
         <div id="new-city" class="container-fluid" >
+
             <input type="text" id="addCity" placeholder= "Ingrese una ciudad">
+
             <button id="button-add-city"  onclick="addNewCity()">+ Agregar ciudad</button>
+
+            <button onclick="window.location.reload()">Reset</button>
         </div>
             
 
