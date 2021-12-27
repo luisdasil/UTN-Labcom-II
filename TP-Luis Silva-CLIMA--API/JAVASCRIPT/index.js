@@ -84,9 +84,6 @@ function addNewCity(){
 
 function validateNewOption() {
     arrayOptions =  JSON.parse(localStorage.getItem("JSonOptions",cityList))
-    if (arrayOptions==null){
-        return 
-    }
     if (arrayOptions.length == 0){
         return false
     }
