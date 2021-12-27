@@ -1,12 +1,9 @@
 /*  Arreglar:
-    1) Home:
-        Agregar una pagina cuya funcion sea agregar ciudades y tener la opcion de seleccionar modo oscuro o diurna
+    1) validateNewCity:
+        Validacion (ciudad repetida)
+    2) addNewCity:
+        Que la ciudad agregada no desaparezca al reiniciar
 
-    2) addNewCity():
-        Programar la funcion para poder agregar opciones al select
-
-    3) animated.css:
-        Lograr que las animaciones puedan aparecer
 */
 
 
@@ -15,24 +12,93 @@
 // variables para mostrar api
 var main = document.getElementById("name")
 var temp = document.getElementById("temp")
-var desc = document.getElementById("desc")
+var desc = document.getElementById("description")
 var clouds= document.getElementById("clouds")
 var card = document.getElementById("card")
 var weather = document.getElementById("weather")
-var  iconImg = document.getElementById("iconImg")
 
 
-//form
+//form:
+//      botons
 var button = document.getElementById("button")//boton select
-let newCity = document.getElementById("addCity");//input text
-var buttonAddCity = document.getElementById("button-add-city")//boton input text
+
+//      Etiquetas estructura
 var cardError= document.getElementById("card-error")//error
-let city = document.getElementById("cities"); //select
-var weatherForm = document.getElementById("selec-city")//form
-var cityList = document.getElementById("cityList")
 var body = document.getElementById("body")
+var inputNewCity = document.getElementById("new-city")
+var container = document.getElementById("containerForm")
+
+//form-intput
+var weatherForm = document.getElementById("selec-city")//form
+let newCity = document.getElementById("addCity");//input text
+let city = document.getElementById("cities"); //select
+
+//array
+var cityList = []
+var arrayOptions =[]
 
 
+//agregar una nueva opcion
+
+function initSelectOptions(){   
+    arrayOptions = JSON.parse(localStorage.getItem("JSonOptions"))
+    
+    if (arrayOptions == null){
+        return
+    }
+    else{
+        for (var i = 0; i <= arrayOptions.length; i++){
+            
+            city.options.add(new Option(arrayOptions[i]))
+
+        }
+    }
+    return arrayOptions
+
+    /*
+    validar si localStorage tiene ciudades cargadas 
+    si tiene recorrerlo
+    a cda item generar un option dentro del select
+    (si no tiene nada)
+    */ 
+}
+initSelectOptions()
+
+function addNewCity(){
+    if (validateNewOption()==false){
+        cardError.style.display="block"
+        container.style.display="none"
+    
+    } 
+    else {
+        city.options.add(new Option(newCity.value))
+        cityList.push(newCity.value)
+        localStorage.setItem("JSonOptions",JSON.stringify(cityList));
+        newCity.value = ""
+        cardError.style.display="none"
+    }
+}
+
+
+//validar que no sea una ciudad repetida
+
+function validateNewOption() {
+    arrayOptions =  JSON.parse(localStorage.getItem("JSonOptions",cityList))
+    if (arrayOptions==null){
+        return 
+    }
+    if (arrayOptions.length == 0){
+        return false
+    }
+    for (let i = 0; i <= arrayOptions.length; i++) {
+        if (newCity.value === arrayOptions[i]) {
+            return false
+        }
+    }
+}
+
+
+//conexion a la api
 
 async function apiConection() {
     try {
@@ -43,75 +109,62 @@ async function apiConection() {
         let thermalSensation = data.main.feels_like;
         let mainHumidity = data.main.humidity
         let weatherDescription = data.weather[0].description
+        let country = data.sys.country
 // style
         cardError.style.display="none"
-        card.style.display= "inline-block"
-       // card.className += "animated__animated animate__fadeInDown animate__delay-5 animate__slow"
+        card.style.display= "block"
+        inputNewCity.style.display= "none";
+
         stylePage();
         
-
 // inner
-        main.innerHTML = data.name
-        temp.innerHTML =  "Temperatura actual: " + temperature + "°C";//temperatura
+        main.innerHTML = city.value + " / " + country  ;
+        temp.innerHTML =  temperature + "°C";//temperatura
         desc.innerHTML =  "Sensacion Termica: " + thermalSensation + "°C"; //sensacion termica
         clouds.innerHTML =  "Humedad: " + mainHumidity + " %";//humedad
-        weather.innerHTML = weatherDescription; //descripcion
+        desc.innerHTML = "Cielo: " + weatherDescription; //descripcion
 
 } catch (error){
     cardError.style.display="block"
     weatherForm.style.display= "none"
     card.style.display ="none"
-    alert(error.message)
+    console.log(error.message)
 }
 }
+
 
 function onSubmit(event) {
     event.preventDefault();
     apiConection()
 }
-weatherForm.addEventListener('submit', onSubmit, true);
 
 
-function validateNewOption(){
-    clearErrors(newCity.id);
-    var valid = false;
+// visibilidad del input text
 
-    if(newCity.value != city){
-        valid = true
-    }
-    return valid
-    
+function viewInput(){
+        inputNewCity.style.display= "block";
 }
 
 
-function addNewCity(){
-    
-    city.options.add(new Option(newCity.value));
-    newCity.value=""
+//background dinamico
 
-}
-
-// displayWeather: function (data) {
-//     const { name } = data;
-//     const { icon, description } = data.weather[0];
-//     const { temp, humidity } = data.main;
-//     const { speed } = data.wind;
-//     document.querySelector(".city").innerText = "Weather in " + name;
-//     document.querySelector(".icon").src =
-//       "https://openweathermap.org/img/wn/" + icon + ".png";
-//     document.querySelector(".description").innerText = description;
-//     document.querySelector(".temp").innerText = temp + "°C";
-//     document.querySelector(".humidity").innerText =
-//       "Humidity: " + humidity + "%";
-//     document.querySelector(".wind").innerText =
-//       "Wind speed: " + speed + " km/h";
-//     document.querySelector(".weather").classList.remove("loading");
-//     document.body.style.backgroundImage =
-//       "url('https://source.unsplash.com/1600x900/?" + name + "')";
-//   }
-
-function stylePage() {
+function stylePage(){
     body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?" + city.value + "')";
-    iconImg.src =
-        "https://openweathermap.org/img/wn/" + iconImg + ".png";
 }
+
+
+
+
+
+//eventos
+
+button.addEventListener('click', onSubmit, true); // obtener clima
+
+
+inputNewCity.addEventListener("keyup", function (event){ // ingresar nueva ciudad atravez de un enter
+    if (event.keyCode === 13){
+        addNewCity(event = true)
+    }
+})
+
+
